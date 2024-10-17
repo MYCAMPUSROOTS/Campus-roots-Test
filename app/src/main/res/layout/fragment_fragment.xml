@@ -19,7 +19,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/group_15" />
+            app:srcCompat="@mipmap/group_15" />
 
         <!-- CardView for Login Section -->
         <androidx.cardview.widget.CardView
@@ -36,7 +36,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="433dp"
                 android:padding="16dp">
 
                 <!-- Login Title -->
@@ -47,21 +47,19 @@
                     android:text="Log in to your account"
                     android:textColor="#666666"
                     android:textSize="18sp"
-                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <!-- Email EditText -->
                 <EditText
                     android:id="@+id/editTextEmail"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:hint="Email Address"
+                    android:backgroundTint="#DDDDDD"
+                    android:hint="Placeholder"
                     android:inputType="textEmailAddress"
                     android:padding="12dp"
-                    android:backgroundTint="#DDDDDD"
                     android:textColor="#000000"
                     android:textColorHint="#666666"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -75,10 +73,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:hint="Password"
+                    android:backgroundTint="#DDDDDD"
+                    android:hint="Placeholder"
                     android:inputType="textPassword"
                     android:padding="12dp"
-                    android:backgroundTint="#DDDDDD"
                     android:textColor="#000000"
                     android:textColorHint="#666666"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -87,29 +85,30 @@
                     app:layout_constraintWidth_percent="0.85" />
 
                 <!-- Forgot Password -->
+
+                <!-- Login Button -->
                 <TextView
                     android:id="@+id/forgotPassword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="24dp"
                     android:text="Forgot Password"
-                    android:textColor="#1C1C1C"
-                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/editTextPassword" />
 
-                <!-- Login Button -->
                 <Button
                     android:id="@+id/loginButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:backgroundTint="#0F9D58"
+                    android:backgroundTint="#00A085"
+                    android:padding="16dp"
                     android:text="Login"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
-                    android:padding="16dp"
                     app:cornerRadius="50dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -124,7 +123,7 @@
                     android:layout_marginTop="16dp"
                     android:text="Or Login with"
                     android:textColor="#666666"
-                    android:textSize="14sp"
+                    android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/loginButton" />
@@ -145,7 +144,7 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@null"
-                        android:src="@drawable/facebook_ic" />
+                        android:src="@mipmap/facebook_ic" />
 
                     <ImageButton
                         android:id="@+id/linkedinButton"
@@ -154,31 +153,53 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:background="@null"
-                        android:src="@drawable/linkedin_ic" />
+                        android:src="@mipmap/linkedin_ic" />
 
                     <ImageButton
                         android:id="@+id/googleButton"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@null"
-                        android:src="@drawable/google_ic" />
+                        android:src="@mipmap/google_ic" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="266dp"
+                    android:layout_height="72dp"
+                    android:layout_marginTop="32dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/socialLoginText">
+                    <!-- Create Account Text -->
+                    <TextView
+                        android:id="@+id/createAccountTextQuestion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Don't have an account?"
+                        android:textColor="#666666"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/createAccountText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text=" Create an account"
+                        android:textColor="#0F9D58"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
-
-        <!-- Create Account Text -->
-        <TextView
-            android:id="@+id/createAccountText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Don't have an account? Create an account"
-            android:textColor="#0F9D58"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
