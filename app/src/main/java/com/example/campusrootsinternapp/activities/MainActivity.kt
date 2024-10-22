@@ -1,11 +1,11 @@
-package com.example.campusrootsinternapp
+package com.example.campusrootsinternapp.activities
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
+import com.example.campusrootsinternapp.HomeFragment
+import com.example.campusrootsinternapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

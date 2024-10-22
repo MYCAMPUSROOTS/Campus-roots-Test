@@ -6,8 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.example.campusrootsinternapp.databinding.ActivityMainBinding
+import com.example.campusrootsinternapp.activities.FirstActivity
 import com.example.campusrootsinternapp.databinding.FragmentFragmentBinding
 
 class HomeFragment : Fragment() {
@@ -36,6 +35,8 @@ class HomeFragment : Fragment() {
                 Toast.makeText(requireContext(), "Login Unsuccessful", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(requireContext(), "Login Successful", Toast.LENGTH_SHORT).show()
+                val intent = FirstActivity.newIntent(requireContext(), email, password)
+                startActivity(intent)
             }
         }
     }
