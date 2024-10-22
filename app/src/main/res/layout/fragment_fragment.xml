@@ -10,6 +10,8 @@
         android:layout_height="match_parent"
         android:background="#F2F2F7">
 
+
+
         <!-- Centered Logo -->
         <ImageView
             android:id="@+id/imageView"
