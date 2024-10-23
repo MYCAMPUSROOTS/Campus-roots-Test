@@ -10,6 +10,8 @@
         android:layout_height="match_parent"
         android:background="#F2F2F7">
 
+
+
         <!-- Centered Logo -->
         <ImageView
             android:id="@+id/imageView"
@@ -51,42 +53,63 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <EditText
-                    android:id="@+id/editTextEmail"
+                <!-- Email TextInputLayout -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutEmail"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:backgroundTint="#DDDDDD"
-                    android:hint="Placeholder"
-                    android:inputType="textEmailAddress"
-                    android:padding="12dp"
-                    android:textColor="#000000"
-                    android:textColorHint="#666666"
+                    app:boxCornerRadiusBottomEnd="6dp"
+                    app:boxCornerRadiusBottomStart="6dp"
+                    app:boxCornerRadiusTopEnd="6dp"
+                    app:boxCornerRadiusTopStart="6dp"
+                    app:boxStrokeWidth="1dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/loginTitle"
-                    app:layout_constraintWidth_percent="0.85" />
+                    app:layout_constraintWidth_percent="0.85">
 
-                <!-- Password EditText -->
-                <EditText
-                    android:id="@+id/editTextPassword"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:padding="12dp"
+                        android:textColor="#000000"
+                        android:textColorHint="#666666" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Password TextInputLayout -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutPassword"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:backgroundTint="#DDDDDD"
-                    android:hint="Placeholder"
-                    android:inputType="textPassword"
-                    android:padding="12dp"
-                    android:textColor="#000000"
-                    android:textColorHint="#666666"
+                    app:boxCornerRadiusBottomEnd="6dp"
+                    app:boxCornerRadiusBottomStart="6dp"
+                    app:boxCornerRadiusTopEnd="6dp"
+                    app:boxCornerRadiusTopStart="6dp"
+                    app:boxStrokeWidth="1dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/editTextEmail"
-                    app:layout_constraintWidth_percent="0.85" />
+                    app:layout_constraintTop_toBottomOf="@id/textInputLayoutEmail"
+                    app:layout_constraintWidth_percent="0.85">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:padding="12dp"
+                        android:textColor="#000000"
+                        android:textColorHint="#666666" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Forgot Password -->
-
-                <!-- Login Button -->
                 <TextView
                     android:id="@+id/forgotPassword"
                     android:layout_width="wrap_content"
@@ -97,8 +120,9 @@
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/editTextPassword" />
+                    app:layout_constraintTop_toBottomOf="@id/textInputLayoutPassword" />
 
+                <!-- Login Button -->
                 <Button
                     android:id="@+id/loginButton"
                     android:layout_width="0dp"
@@ -163,6 +187,7 @@
                         android:src="@mipmap/google_ic" />
                 </LinearLayout>
 
+                <!-- Create Account -->
                 <LinearLayout
                     android:layout_width="266dp"
                     android:layout_height="72dp"
@@ -172,7 +197,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/socialLoginText">
-                    <!-- Create Account Text -->
+
                     <TextView
                         android:id="@+id/createAccountTextQuestion"
                         android:layout_width="wrap_content"
@@ -181,8 +206,6 @@
                         android:text="Don't have an account?"
                         android:textColor="#666666"
                         android:textSize="14sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
 
@@ -194,12 +217,7 @@
                         android:text=" Create an account"
                         android:textColor="#0F9D58"
                         android:textSize="14sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
-
-
+                        app:layout_constraintEnd_toEndOf="parent" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
