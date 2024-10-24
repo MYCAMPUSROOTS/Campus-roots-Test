@@ -8,9 +8,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.campusrootsinternapp.activities.DashboardActivity
+import com.example.campusrootsinternapp.base.BaseFragment
 import com.example.campusrootsinternapp.databinding.FragmentFragmentBinding
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment() {
 
     private var _binding: FragmentFragmentBinding? = null
     private val binding get() = _binding!!

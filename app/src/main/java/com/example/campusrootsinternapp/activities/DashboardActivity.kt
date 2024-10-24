@@ -5,8 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
 import com.example.campusrootsinternapp.DashboardFragment
 import com.example.campusrootsinternapp.R
+import com.example.campusrootsinternapp.base.BaseActivity
 
-class DashboardActivity : AppCompatActivity() {
+class DashboardActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

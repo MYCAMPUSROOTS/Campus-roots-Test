@@ -69,10 +69,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.cardview)
     implementation(libs.material)
-    implementation("com.google.android.material:material:1.6.1"
-//   implementation(libs.androidx.legacy.support.v4)
-//    implementation(libs.androidx.lifecycle.livedata.ktx)
-//    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation("com.google.android.material:material:1.6.1")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -80,4 +77,9 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    //Navigation Dependency
+    implementation(fileTree(mapOf("include" to listOf("*.jar", "*.aar"), "dir" to "libs")))
+//    implementation("frag-nav-3.3.0-sources.jar")
+    //Timber
+    implementation("com.jakewharton.timber:timber:5.0.1")
 }

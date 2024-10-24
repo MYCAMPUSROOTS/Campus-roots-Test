@@ -7,7 +7,11 @@ pluginManagement {
                 includeGroupByRegex("androidx.*")
             }
         }
+        flatDir { dirs("app/libs") }
+        mavenCentral {"https://jcenter.bintray.com/"}
         mavenCentral()
+        google()
+        jcenter()
         gradlePluginPortal()
     }
 }
