@@ -10,6 +10,8 @@
         android:layout_height="match_parent"
         android:background="#F2F2F7">
 
+
+
         <!-- Centered Logo -->
         <ImageView
             android:id="@+id/imageView"
@@ -203,7 +205,9 @@
                         android:layout_marginTop="16dp"
                         android:text="Don't have an account?"
                         android:textColor="#666666"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
                     <TextView
                         android:id="@+id/createAccountText"
@@ -212,7 +216,8 @@
                         android:layout_marginTop="16dp"
                         android:text=" Create an account"
                         android:textColor="#0F9D58"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
