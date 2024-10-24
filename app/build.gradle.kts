@@ -69,8 +69,10 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.cardview)
     implementation(libs.material)
-    implementation("com.google.android.material:material:1.6.1")
-
+    implementation("com.google.android.material:material:1.6.1"
+//   implementation(libs.androidx.legacy.support.v4)
+//    implementation(libs.androidx.lifecycle.livedata.ktx)
+//    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
