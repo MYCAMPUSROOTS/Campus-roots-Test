@@ -28,6 +28,7 @@ class HomeFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.loginButton.setOnClickListener {
+
             val email = binding.editTextEmail.text.toString()
             val password = binding.editTextPassword.text.toString()
 
