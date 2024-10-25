@@ -147,5 +147,6 @@ open class BaseFragment() : Fragment(), CoroutineScope, SaveData {
 }
 
 interface SaveData {
+
     fun saveToViewModel()
 }

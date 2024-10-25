@@ -6,13 +6,64 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/fragment_one_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="#00A085"
         android:padding="16dp"
         android:text="Fragment 1"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_two_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.85" />
+
+    <Button
+        android:id="@+id/fragment_two_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#00A085"
+        android:padding="16dp"
+        android:text="Fragment 2"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_three_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.85" />
+
+    <Button
+        android:id="@+id/fragment_three_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#00A085"
+        android:padding="16dp"
+        android:text="Fragment 3"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_four_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.85" />
+
+    <Button
+        android:id="@+id/fragment_four_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="256dp"
+        android:backgroundTint="#00A085"
+        android:padding="16dp"
+        android:text="Fragment 4"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:cornerRadius="50dp"
@@ -20,6 +71,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.85" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,8 +24,17 @@ class DashboardFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.loginButton.setOnClickListener {
+        binding.fragmentOneButton.setOnClickListener {
             mFragmentNavigation.pushFragment(Fragment1())
+        }
+        binding.fragmentTwoButton.setOnClickListener {
+            mFragmentNavigation.pushFragment(Fragment2())
+        }
+        binding.fragmentThreeButton.setOnClickListener {
+            mFragmentNavigation.pushFragment(Fragment3())
+        }
+        binding.fragmentFourButton.setOnClickListener {
+            mFragmentNavigation.pushFragment(Fragment4())
         }
     }
 
