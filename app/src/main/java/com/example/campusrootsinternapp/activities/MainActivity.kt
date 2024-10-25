@@ -9,6 +9,7 @@ import com.example.campusrootsinternapp.R
 import com.example.campusrootsinternapp.base.BaseActivity
 
 class MainActivity : BaseActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

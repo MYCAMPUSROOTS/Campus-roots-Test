@@ -1,41 +1,44 @@
-package com.example.campusrootsinternapp
-
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.campusrootsinternapp.R
 import com.example.campusrootsinternapp.adapter.Adapter
-import com.example.campusrootsinternapp.base.BaseFragment
+import com.example.campusrootsinternapp.model.CourseItem
 
-class Fragment1 : BaseFragment() {
+class Fragment1 : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: Adapter
+    private lateinit var courseList: ArrayList<CourseItem>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_1, container, false)
+        val view = inflater.inflate(R.layout.fragment_1, container, false)
+        recyclerView = view.findViewById(R.id.recyclerView)
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
-//        recyclerView.apply {
-//            layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context)
-//            adapter = Adapter(courseList)
-//            setRecycledViewPool(recycledViewPool)
-//        }
-    }
+        // Initialize the course list
+        courseList = ArrayList()
+        courseList.add(CourseItem("MTH 101", "Student Elementary Mathematics TA", "Markus Callaway", 7, true))
+        courseList.add(CourseItem("PHY 211", "Principles of Quantum Physics", "Markus Callaway", 7, true))
+        courseList.add(CourseItem("BUS 103", "Introduction to Business", "Markus Callaway", 7, false))
+        courseList.add(CourseItem("PHY 211", "Principles of Quantum Physics", "Markus Callaway", 7, false))
+        courseList.add(CourseItem("MTH 101", "Student Elementary Mathematics TA", "Markus Callaway", 7, false))
+        courseList.add(CourseItem("BUS 103", "Introduction to Business", "Markus Callaway", 7, false))
 
-    companion object {
-
+        // Set up the adapter
+        adapter = Adapter(courseList)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.adapter = adapter
     }
 }
