@@ -59,6 +59,7 @@ open class BaseFragment() : Fragment(), CoroutineScope, SaveData {
         fun clearStack()
         fun clearDialogFragmentStack()
         fun switchFragment(index: Int)
+        fun pop()
     }
 
     override fun onDestroy() {

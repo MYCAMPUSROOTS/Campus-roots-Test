@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.campusrootsinternapp.base.BaseFragment
 import com.example.campusrootsinternapp.databinding.FragmentDashboardBinding
@@ -36,6 +37,10 @@ class DashboardFragment : BaseFragment() {
         }
         binding.fragmentFourButton.setOnClickListener {
             mFragmentNavigation.pushFragment(Fragment4())
+        }
+
+        binding.backButton.setOnClickListener {
+            mFragmentNavigation.popFragment()
         }
     }
 

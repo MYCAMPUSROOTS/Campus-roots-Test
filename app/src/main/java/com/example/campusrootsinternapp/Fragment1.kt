@@ -2,14 +2,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.campusrootsinternapp.R
 import com.example.campusrootsinternapp.adapter.Adapter
+import com.example.campusrootsinternapp.base.BaseFragment
 import com.example.campusrootsinternapp.model.CourseItem
 
-class Fragment1 : Fragment() {
+class Fragment1 : BaseFragment() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: Adapter
