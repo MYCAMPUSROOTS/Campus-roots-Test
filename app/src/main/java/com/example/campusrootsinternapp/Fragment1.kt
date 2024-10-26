@@ -37,6 +37,21 @@ class Fragment1 : BaseFragment() {
         courseList.add(CourseItem("MTH 101", "Student Elementary Mathematics TA", "Markus Callaway", 7, false))
         courseList.add(CourseItem("BUS 103", "Introduction to Business", "Markus Callaway", 7, false))
 
+        courseList.add(CourseItem("MTH 101", "Student Elementary Mathematics TA", "Markus Callaway", 7, true))
+        courseList.add(CourseItem("PHY 211", "Principles of Quantum Physics", "Markus Callaway", 7, true))
+        courseList.add(CourseItem("BUS 103", "Introduction to Business", "Markus Callaway", 7, false))
+        courseList.add(CourseItem("PHY 211", "Principles of Quantum Physics", "Markus Callaway", 7, false))
+        courseList.add(CourseItem("MTH 101", "Student Elementary Mathematics TA", "Markus Callaway", 7, false))
+        courseList.add(CourseItem("BUS 103", "Introduction to Business", "Markus Callaway", 7, false))
+
+        courseList.add(CourseItem("MTH 101", "Student Elementary Mathematics TA", "Markus Callaway", 7, true))
+        courseList.add(CourseItem("PHY 211", "Principles of Quantum Physics", "Markus Callaway", 7, true))
+        courseList.add(CourseItem("BUS 103", "Introduction to Business", "Markus Callaway", 7, false))
+        courseList.add(CourseItem("PHY 211", "Principles of Quantum Physics", "Markus Callaway", 7, false))
+        courseList.add(CourseItem("MTH 101", "Student Elementary Mathematics TA", "Markus Callaway", 7, false))
+        courseList.add(CourseItem("BUS 103", "Introduction to Business", "Markus Callaway", 7, false))
+
+
         // Set up the adapter
         adapter = Adapter(courseList)
         recyclerView.layoutManager = LinearLayoutManager(context)
