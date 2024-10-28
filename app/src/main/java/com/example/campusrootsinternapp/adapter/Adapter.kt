@@ -3,6 +3,7 @@ package com.example.campusrootsinternapp.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.campusrootsinternapp.R
@@ -18,8 +19,7 @@ class Adapter(private val courseList : List<CourseItem>) : RecyclerView.Adapter<
         val courseTitle : TextView = itemView.findViewById(R.id.courseTitle)
         val courseLecturer : TextView = itemView.findViewById(R.id.courseLecturer)
         val courseChannels : TextView = itemView.findViewById(R.id.courseChannels)
-        val container : TextView = itemView.findViewById(R.id.container)
-//        val isActive : TextView = itemView.findViewById(R.id.isActive)
+        val isActive : ImageView = itemView.findViewById(R.id.isActive)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -40,14 +40,10 @@ class Adapter(private val courseList : List<CourseItem>) : RecyclerView.Adapter<
         holder.courseLecturer.text = currentItem.courseLecturer
         holder.courseChannels.text = currentItem.courseChannels.toString()
 
-        holder.container.setOnClickListener {
-            selectedCourse.value = currentItem
+        if(currentItem.isActive) {
+            holder.isActive.visibility = View.VISIBLE
+        } else {
+            holder.isActive.visibility = View.GONE
         }
-
-//        if(currentItem.isActive) {
-//            holder.isActive.visibility = View.VISIBLE
-//        } else {
-//            holder.isActive.visibility = View.GONE
-//        }
     }
 }

@@ -5,19 +5,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
-import androidx.lifecycle.MutableLiveData
+import android.widget.Button
+import androidx.fragment.app.Fragment
 import com.example.campusrootsinternapp.base.BaseFragment
 import com.example.campusrootsinternapp.databinding.FragmentDashboardBinding
-import com.example.campusrootsinternapp.util.delayFor
-import com.example.campusrootsinternapp.util.observeChange
-import kotlinx.coroutines.delay
 
 class DashboardFragment : BaseFragment() {
 
     private var _binding: FragmentDashboardBinding? = null
     private val binding get() = _binding!!
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +26,6 @@ class DashboardFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         binding.fragmentOneButton.setOnClickListener {
             mFragmentNavigation.pushFragment(Fragment1())
         }
@@ -42,6 +37,10 @@ class DashboardFragment : BaseFragment() {
         }
         binding.fragmentFourButton.setOnClickListener {
             mFragmentNavigation.pushFragment(Fragment4())
+        }
+
+        binding.backButton.setOnClickListener {
+            mFragmentNavigation.popFragment()
         }
     }
 

@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/container"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/courseContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:padding="16dp"
     android:gravity="center_vertical">
 
     <!-- Left-side: Course Code Circle -->
     <LinearLayout
-        android:layout_width="40dp"
+        android:layout_width="50dp"
         android:layout_height="40dp"
         android:gravity="center"
-        android:background="@drawable/rounded_circle"
         android:layout_marginEnd="16dp">
+
+        <ImageView
+            android:id="@+id/isActive"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:background="@drawable/rounded_circle"
+            android:src="@drawable/rounded_circle"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
             android:id="@+id/courseCode"
-            android:layout_width="wrap_content"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="MTH 101"
@@ -36,16 +44,17 @@
         android:orientation="vertical">
 
         <!-- Course Title -->
+
+        <!-- Instructor and Channels -->
         <TextView
             android:id="@+id/courseTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:text="Student Elementary Mathematics TA"
             android:textColor="#000000"
-            android:text="Student Elementary Mathematics TA" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-        <!-- Instructor and Channels -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
