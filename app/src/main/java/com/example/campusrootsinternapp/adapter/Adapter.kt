@@ -18,6 +18,7 @@ class Adapter(private val courseList : List<CourseItem>) : RecyclerView.Adapter<
         val courseTitle : TextView = itemView.findViewById(R.id.courseTitle)
         val courseLecturer : TextView = itemView.findViewById(R.id.courseLecturer)
         val courseChannels : TextView = itemView.findViewById(R.id.courseChannels)
+        val container : TextView = itemView.findViewById(R.id.container)
 //        val isActive : TextView = itemView.findViewById(R.id.isActive)
     }
 
@@ -38,6 +39,10 @@ class Adapter(private val courseList : List<CourseItem>) : RecyclerView.Adapter<
         holder.courseTitle.text = currentItem.courseTitle
         holder.courseLecturer.text = currentItem.courseLecturer
         holder.courseChannels.text = currentItem.courseChannels.toString()
+
+        holder.container.setOnClickListener {
+            selectedCourse.value = currentItem
+        }
 
 //        if(currentItem.isActive) {
 //            holder.isActive.visibility = View.VISIBLE
