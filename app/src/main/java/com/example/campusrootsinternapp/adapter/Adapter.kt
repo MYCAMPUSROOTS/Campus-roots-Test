@@ -1,15 +1,11 @@
 package com.example.campusrootsinternapp.adapter
 
-import android.os.Bundle
-import android.provider.Settings.Global.putInt
-import android.provider.Settings.Global.putString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.campusrootsinternapp.FragmentCourse
 import com.example.campusrootsinternapp.R
 import com.example.campusrootsinternapp.model.CourseItem
 import com.example.campusrootsinternapp.util.SingleLiveEvent
