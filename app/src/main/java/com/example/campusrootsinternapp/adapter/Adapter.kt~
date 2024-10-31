@@ -53,6 +53,13 @@ class Adapter(private val courseList : List<CourseItem>) : RecyclerView.Adapter<
 
         holder.courseContainer.setOnClickListener {
             selectedCourse.value = currentItem
+            val fragment = FragmentCourse()
+            fragment.arguments = Bundle().apply {
+                putString("courseName", currentItem.courseName)
+                putString("courseTitle", currentItem.courseTitle)
+                putString("courseLecturer", currentItem.courseLecturer)
+                putInt("courseChannels", currentItem.courseChannels)
+            }
         }
     }
 }
