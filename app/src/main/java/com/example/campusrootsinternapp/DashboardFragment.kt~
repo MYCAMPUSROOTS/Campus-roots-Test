@@ -38,6 +38,10 @@ class DashboardFragment : BaseFragment() {
         binding.fragmentFourButton.setOnClickListener {
             mFragmentNavigation.pushFragment(Fragment4())
         }
+
+        binding.backButton.setOnClickListener {
+            mFragmentNavigation.popFragment()
+        }
     }
 
     override fun onDestroy() {

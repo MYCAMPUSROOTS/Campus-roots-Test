@@ -20,6 +20,7 @@ class Adapter(private val courseList : List<CourseItem>) : RecyclerView.Adapter<
         val courseLecturer : TextView = itemView.findViewById(R.id.courseLecturer)
         val courseChannels : TextView = itemView.findViewById(R.id.courseChannels)
         val isActive : ImageView = itemView.findViewById(R.id.isActive)
+        val courseContainer : View = itemView.findViewById(R.id.courseContainer)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -44,6 +45,10 @@ class Adapter(private val courseList : List<CourseItem>) : RecyclerView.Adapter<
             holder.isActive.visibility = View.VISIBLE
         } else {
             holder.isActive.visibility = View.GONE
+        }
+
+        holder.courseContainer.setOnClickListener {
+            selectedCourse.value = currentItem
         }
     }
 }
