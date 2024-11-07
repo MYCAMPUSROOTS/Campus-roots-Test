@@ -9,6 +9,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.campusrootsinternapp.base.BaseFragment
 import com.example.campusrootsinternapp.databinding.FragmentDashboardBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 class DashboardFragment : BaseFragment() {
 

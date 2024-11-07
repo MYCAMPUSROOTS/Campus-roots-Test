@@ -1,7 +1,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/back_button_fragment2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:visibility="visible"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back_arrow" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -18,4 +30,14 @@
         android:layout_centerHorizontal="true"
         android:paddingTop="16dp"
         android:text="Response will appear here" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/progressBar"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:paddingTop="16dp"-->
+<!--        android:text="Response will appear here" />-->
+
 </RelativeLayout>
