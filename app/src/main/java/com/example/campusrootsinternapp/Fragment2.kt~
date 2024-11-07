@@ -37,12 +37,12 @@ class Fragment2 : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.postResponse.observeChange(viewLifecycleOwner) { postResponse ->
-//            binding.textView.text = buildString {
-//                append("User ID: ${postResponse.userId}\n")
-//                append("ID: ${postResponse.id}\n")
-//                append("Title: ${postResponse.title}\n")
-//                append("Body: ${postResponse.body}")
-//            }
+            binding.textView.text = buildString {
+                append("User ID: ${postResponse.userId}\n")
+                append("ID: ${postResponse.id}\n")
+                append("Title: ${postResponse.title}\n")
+                append("Body: ${postResponse.body}")
+            }
         }
 
         viewModel.showLoader.observeChange(viewLifecycleOwner) { showLoader ->
