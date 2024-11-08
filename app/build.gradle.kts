@@ -1,7 +1,9 @@
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("org.jetbrains.kotlin.kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -89,10 +91,11 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     //Hilt Dependencies
-    implementation("com.google.dagger:hilt-android:2.45")
-    kapt("com.google.dagger:hilt-android-compiler:2.45")
-    kapt("androidx.hilt:hilt-compiler:1.2.0")
-    implementation("androidx.hilt:hilt-common:1.2.0")
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
+
+//    kapt("androidx.hilt:hilt-compiler:1.2.0")
+//    implementation("androidx.hilt:hilt-common:1.2.0")
 
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
     implementation ("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
@@ -106,4 +109,6 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.8.4")
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4")
     implementation ("androidx.fragment:fragment-ktx:1.8.2")
+    implementation ("com.squareup:javapoet:1.13.0") // or the latest compatible version
+
 }
