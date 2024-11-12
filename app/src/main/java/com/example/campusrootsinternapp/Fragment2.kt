@@ -37,6 +37,7 @@ class Fragment2 : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.postResponse.observeChange(viewLifecycleOwner) { postResponse ->
+            // new line
 //            binding.textView.text = buildString {
 //                append("User ID: ${postResponse.userId}\n")
 //                append("ID: ${postResponse.id}\n")
