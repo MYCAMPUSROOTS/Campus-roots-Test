@@ -9,6 +9,7 @@ import javax.inject.Inject
 
 interface AppRepository {
     suspend fun getPosts(): UseCaseResult<Response<PostResponse>>
+    suspend fun getAllPosts(): UseCaseResult<Response<List<PostResponse>>>
 
 }
 
@@ -20,6 +21,20 @@ class AppRepositoryImpl @Inject constructor(
             val response = apiService.getPost().await()
             if(response.isSuccessful){
 
+                UseCaseResult.Success(response)
+            }else{
+                UseCaseResult.FailedAPI(response)
+            }
+        }catch (ex: Exception){
+            Timber.e(ex)
+            UseCaseResult.Error(ex)
+        }
+    }
+
+    override suspend fun getAllPosts(): UseCaseResult<Response<List<PostResponse>>> {
+        return try {
+            val response = apiService.getAllPosts().await()
+            if(response.isSuccessful){
                 UseCaseResult.Success(response)
             }else{
                 UseCaseResult.FailedAPI(response)

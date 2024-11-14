@@ -38,12 +38,12 @@ class Fragment2 : BaseFragment() {
 
         viewModel.postResponse.observeChange(viewLifecycleOwner) { postResponse ->
             // new line
-//            binding.textView.text = buildString {
-//                append("User ID: ${postResponse.userId}\n")
-//                append("ID: ${postResponse.id}\n")
-//                append("Title: ${postResponse.title}\n")
-//                append("Body: ${postResponse.body}")
-//            }
+            binding.textView.text = buildString {
+                append("User ID: ${postResponse.userId}\n")
+                append("ID: ${postResponse.id}\n")
+                append("Title: ${postResponse.title}\n")
+                append("Body: ${postResponse.body}")
+            }
         }
 
         viewModel.showLoader.observeChange(viewLifecycleOwner) { showLoader ->
@@ -53,38 +53,8 @@ class Fragment2 : BaseFragment() {
                 binding.progressBar.visibility = View.GONE
             }
         }
-        super.onViewCreated(view, savedInstanceState)
         binding.backButtonFragment2.setOnClickListener {
             mFragmentNavigation.popFragment()
         }
-
-//        // Display loading indicator
-//        progressBar.visibility = View.VISIBLE
-//
-//        // Make the API call
-//        RetrofitInstance.api.getPost().enqueue(object : Callback<PostResponse> {
-//            override fun onResponse(call: Call<PostResponse>, response: Response<PostResponse>) {
-//                // Hide loading indicator
-//                progressBar.visibility = View.GONE
-//
-//                if (response.isSuccessful) {
-//                    val post = response.body()
-//                    textView.text = buildString {
-//                        append("User ID: ${post?.userId}\n")
-//                        append("ID: ${post?.id}\n")
-//                        append("Title: ${post?.title}\n")
-//                        append("Body: ${post?.body}")
-//                    }
-//                } else {
-//                    textView.text = "Failed to retrieve data"
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<PostResponse>, t: Throwable) {
-//                // Hide loading indicator
-//                progressBar.visibility = View.GONE
-//                textView.text = "Error: ${t.message}"
-//            }
-//        })
     }
 }
