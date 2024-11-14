@@ -31,7 +31,7 @@ class DashboardFragment : BaseFragment() {
             mFragmentNavigation.pushFragment(Fragment1())
         }
         binding.fragmentTwoButton.setOnClickListener {
-            mFragmentNavigation.pushFragment(Fragment2())
+            mFragmentNavigation.pushFragment(FragmentPosts())
         }
         binding.fragmentThreeButton.setOnClickListener {
             mFragmentNavigation.pushFragment(Fragment3())

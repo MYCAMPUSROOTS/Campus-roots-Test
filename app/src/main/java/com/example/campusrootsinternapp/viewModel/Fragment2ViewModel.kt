@@ -1,5 +1,6 @@
 package com.example.campusrootsinternapp.viewModel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.campusrootsinternapp.ApiService
@@ -12,6 +13,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
@@ -22,10 +26,11 @@ class Fragment2ViewModel @Inject constructor(
     val postResponse = SingleLiveEvent<PostResponse>()
     val showLoader = MutableLiveData<Boolean>()
 
-    fun getPosts(){
+
+    fun getPost(postId: Int){
         showLoader.value = true
         launch {
-            when(val response = appRepository.getPosts()){
+            when(val response = appRepository.getPost(postId)){
                 is UseCaseResult.Success -> {
                     postResponse.value = response.data.body()
                 }
@@ -36,7 +41,18 @@ class Fragment2ViewModel @Inject constructor(
         }
     }
 
-    init {
-        getPosts()
-    }
+//    fun getPost(postId: Int?) {
+//        appRepository.getPost(postId).enqueue(object : Callback<PostResponse> {
+//            override fun onResponse(call: Call<PostResponse>, response: Response<PostResponse>) {
+//                if (response.isSuccessful) {
+//                    _postResponse.value = response.body()
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<PostResponse>, t: Throwable) {
+//                // Handle failure
+//            }
+//        })
+//
+//    }
 }

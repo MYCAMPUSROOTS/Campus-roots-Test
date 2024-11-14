@@ -38,10 +38,7 @@ class Fragment2 : BaseFragment() {
 
         val postId = arguments?.getString("text")
 
-        viewModel.getPost(postId?.toInt() ?: 0)
-
-
-            viewModel.postResponse.observeChange(viewLifecycleOwner) { postResponse ->
+        viewModel.getPost(postId?.toInt() ?: 0).observeChange(viewLifecycleOwner) { postResponse ->
             // new line
             binding.textView.text = buildString {
                 append("User ID: ${postResponse.userId}\n")
