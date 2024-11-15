@@ -25,6 +25,7 @@ class Fragment2ViewModel @Inject constructor(
 
     val postResponse = SingleLiveEvent<PostResponse>()
     val showLoader = MutableLiveData<Boolean>()
+    val errorObserver = SingleLiveEvent<String>()
 
 
     fun getPost(postId: Int){
@@ -34,7 +35,9 @@ class Fragment2ViewModel @Inject constructor(
                 is UseCaseResult.Success -> {
                     postResponse.value = response.data.body()
                 }
-                else -> {}
+                else -> {
+                    errorObserver.value = "There was an error"
+                }
             }
 
             showLoader.postValue(false)

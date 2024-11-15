@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.core.text.isDigitsOnly
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.campusrootsinternapp.base.BaseFragment
@@ -38,11 +39,24 @@ class Fragment2 : BaseFragment() {
 
         val postId = arguments?.getString("text")
 
+        binding.getPostsbutton.setOnClickListener {
+            val postId = binding.editText.text.toString()
+            if (postId.isDigitsOnly() != true) {
+                showToast("Please enter a valid post ID")
+            } else {
+                displayPosts(postId)
+            }
+        }
+
+        binding.backButtonFragment2.setOnClickListener {
+            mFragmentNavigation.popFragment()
+        }
+    }
+
+    private fun displayPosts(postId: String?) {
         viewModel.getPost(postId?.toInt() ?: 0)
 
-
-            viewModel.postResponse.observeChange(viewLifecycleOwner) { postResponse ->
-            // new line
+        viewModel.postResponse.observeChange(viewLifecycleOwner) { postResponse ->
             binding.textView.text = buildString {
                 append("User ID: ${postResponse.userId}\n")
                 append("ID: ${postResponse.id}\n")
@@ -51,15 +65,16 @@ class Fragment2 : BaseFragment() {
             }
         }
 
+        viewModel.errorObserver.observeChange(viewLifecycleOwner) { error ->
+            showToast(error)
+        }
+
         viewModel.showLoader.observeChange(viewLifecycleOwner) { showLoader ->
             if (showLoader) {
                 binding.progressBar.visibility = View.VISIBLE
             } else {
                 binding.progressBar.visibility = View.GONE
             }
-        }
-        binding.backButtonFragment2.setOnClickListener {
-            mFragmentNavigation.popFragment()
         }
     }
 }
