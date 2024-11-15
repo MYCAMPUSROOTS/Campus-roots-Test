@@ -1,10 +1,11 @@
-package com.example.campusrootsinternapp
+package com.example.campusrootsinternapp.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.campusrootsinternapp.R
 import com.example.campusrootsinternapp.base.BaseFragment
 
 class FragmentCourse : BaseFragment() {

@@ -1,21 +1,17 @@
-package com.example.campusrootsinternapp
+package com.example.campusrootsinternapp.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.campusrootsinternapp.adapter.Adapter
 import com.example.campusrootsinternapp.adapter.PostAdapter
 import com.example.campusrootsinternapp.base.BaseFragment
 import com.example.campusrootsinternapp.databinding.Fragment3Binding
 import com.example.campusrootsinternapp.model.PostResponse
-import com.example.campusrootsinternapp.util.observeChange
 import com.example.campusrootsinternapp.viewModel.Fragment3ViewModel
-import com.google.gson.Gson
 
 /**
  * A simple [Fragment] subclass.
@@ -26,7 +22,6 @@ class Fragment3 : BaseFragment() {
     private val binding get() = _binding!!
 
     private val viewModel: Fragment3ViewModel by activityViewModels()
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,24 +34,27 @@ class Fragment3 : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.postResponse.observe(viewLifecycleOwner) { postResponse ->
-            println(postResponse)
-            val gson = Gson()
-            val postResponseList: List<PostResponse> = gson.fromJson(gson.toJson(postResponse), Array<PostResponse>::class.java).toList()
+        setupObserver()
+        setupListeners()
+    }
 
-            val adapter = PostAdapter(postResponseList)
-            binding.recyclerView.adapter = adapter
-            binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        }
+    private fun setupObserver() {
+        viewModel.postResponse.observe(viewLifecycleOwner, ::handlePostResponse)
+        viewModel.showLoader.observe(viewLifecycleOwner, ::handleShowLoader)
+    }
 
-        viewModel.showLoader.observe(viewLifecycleOwner) { showLoader ->
-            if (showLoader) {
-                binding.progressBar.visibility = View.VISIBLE
-            } else {
-                binding.progressBar.visibility = View.GONE
-            }
-        }
+    private fun handlePostResponse(postResponse: List<PostResponse>) {
+        println(postResponse)
+        val adapter = PostAdapter(postResponse)
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+    }
 
+    private fun handleShowLoader(show: Boolean) {
+        binding.progressBar.visibility = if (show) View.VISIBLE else View.GONE
+    }
+
+    private fun setupListeners() {
         binding.backButtonFragment3.setOnClickListener {
             mFragmentNavigation.popFragment()
         }

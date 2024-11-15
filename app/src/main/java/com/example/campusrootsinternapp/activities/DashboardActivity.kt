@@ -1,9 +1,8 @@
 package com.example.campusrootsinternapp.activities
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
-import com.example.campusrootsinternapp.DashboardFragment
+import com.example.campusrootsinternapp.fragments.DashboardFragment
 import com.example.campusrootsinternapp.R
 import com.example.campusrootsinternapp.base.BaseActivity
 import com.example.campusrootsinternapp.base.BaseFragment

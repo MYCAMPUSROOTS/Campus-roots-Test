@@ -1,3 +1,5 @@
+package com.example.campusrootsinternapp.fragments
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -6,11 +8,9 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.campusrootsinternapp.FragmentCourse
 import com.example.campusrootsinternapp.R
 import com.example.campusrootsinternapp.adapter.Adapter
 import com.example.campusrootsinternapp.base.BaseFragment
-import com.example.campusrootsinternapp.databinding.FragmentDashboardBinding
 import com.example.campusrootsinternapp.model.CourseItem
 import com.example.campusrootsinternapp.util.observeChange
 

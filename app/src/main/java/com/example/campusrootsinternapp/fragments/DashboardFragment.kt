@@ -1,15 +1,11 @@
-package com.example.campusrootsinternapp
+package com.example.campusrootsinternapp.fragments
 
-import Fragment1
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.fragment.app.Fragment
 import com.example.campusrootsinternapp.base.BaseFragment
 import com.example.campusrootsinternapp.databinding.FragmentDashboardBinding
-import dagger.hilt.android.AndroidEntryPoint
 
 class DashboardFragment : BaseFragment() {
 
