@@ -22,7 +22,7 @@
             android:label="@string/app_name">
         </activity>
         <activity
-            android:name=".activities.DashboardActivity"
+            android:name=".enrollment.view.EnrollmentActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
